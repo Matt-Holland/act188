@@ -16,13 +16,11 @@ class TestController extends BaseController
 	public function index() 
 	{
 
-		return "Here's the contact page";
+		return "Here's the contact page it's cool";
 	}
 
     public function showAllProducts()
     {
-
-
         $allProducts = Product::all();
 /*
         [
@@ -37,11 +35,7 @@ class TestController extends BaseController
         ]
  */
 
-
-
-
         return view('pages/showAll', array('allProducts' => $allProducts));
-
 
 
     }
