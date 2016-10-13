@@ -26,13 +26,17 @@ class Controller extends BaseController
 		//	]);
 
 		$name = [];
-		$name['first'] = "matthew";
+		$name['first'] = "matthew c";
 		$name['last'] = "holland";
+        print("this is just here for testing");
 		return view('pages/contact', $name);
 
 	}
 
-
+    public function bootstrap()
+    {
+        return view('pages/bootstraptest');
+    }
 
 
 
