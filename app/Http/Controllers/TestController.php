@@ -18,7 +18,7 @@ class TestController extends BaseController
 {
     use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
 
-	public function index() 
+	public function index()
 	{
 
 		return "Here's the contact page it's cool";
@@ -104,7 +104,20 @@ class TestController extends BaseController
 
     }
 
+    public function getFrameTable()
+    {
+        return view('pages/frameTable', [
+            'searchResults' => complete_data_report::all()
+        ]);
+    }
+
+    public function getEmbeddedFrameTable()
+    {
+        return view('pages/embeddedFrameTable', [
+            'searchResults' => complete_data_report::all()
+        ]);
+    }
+
 
 
 }
-
