@@ -6,10 +6,39 @@
 <script type="text/javascript">
     $(document).ready(function() {
         var $table = $('#searchTable');
-        $table.DataTable();
+        $table.DataTable({
+            lengthChange: false,
+            language: {
+                searchPlaceholder: 'Search...',
+                search: ''
+            }
+        });
         $table.floatThead();
     });
 </script>
+
+<style type="text/css">
+    #searchTable_filter {
+        float: none !important;
+        text-align: left;
+        font-weight: bold;
+        text-align: center;
+    }
+    #searchTable_filter input {
+        padding: 5px;
+        outline: none;
+        border: 2px solid #999999;
+        border-radius: 5px;
+        background-color: #FBFBFB;
+        font-family: Cambria, Cochin, Georgia, serif;
+        font-size: 16px;
+        width: 50%;
+    }
+    #searchTable_filter input:focus {
+        background-color: #FFFFFF;
+        border-color: #333333;
+    }
+</style>
 
 <table id="searchTable" class="display" cellspacing="0" width="100%">
         <thead style="background: #FFF">
