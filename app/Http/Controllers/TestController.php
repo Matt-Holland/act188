@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\complete_data_report;
+use App\Disclosures\Disclosure;
 use App\Product;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -18,7 +19,7 @@ class TestController extends BaseController
 {
     use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
 
-	public function index() 
+	public function index()
 	{
 
 		return "Here's the contact page it's cool";
@@ -104,7 +105,19 @@ class TestController extends BaseController
 
     }
 
+    public function getFrameTable()
+    {
+        $disclosures = Disclosure::all()->forPage(1, 50);
+        return view('pages/frameTable', [
+            'searchResults' => $disclosures->toArray()
+        ]);
+    }
+
+    public function getEmbeddedFrameTable()
+    {
+        return view('pages/embeddedFrameTable');
+    }
+
 
 
 }
-
