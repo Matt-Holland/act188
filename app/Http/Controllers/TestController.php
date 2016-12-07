@@ -113,9 +113,7 @@ class TestController extends BaseController
 
     public function getEmbeddedFrameTable()
     {
-        return view('pages/embeddedFrameTable', [
-            'searchResults' => complete_data_report::all()
-        ]);
+        return view('pages/embeddedFrameTable');
     }
 
 
