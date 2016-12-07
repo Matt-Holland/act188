@@ -14,24 +14,4 @@ use Illuminate\Database\Eloquent\Model;
 class Disclosure extends Model
 {
     protected $table = 'disclosures';
-
-    public function getBrand()
-    {
-        return $this->brand;
-    }
-
-    public function getManufacturer()
-    {
-        return $this->manufacturer;
-    }
-
-    public function getModel()
-    {
-        return $this->model;
-    }
-
-    public function getChemical()
-    {
-        return $this->getChemical();
-    }
 }
