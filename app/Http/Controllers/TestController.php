@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\complete_data_report;
+use App\Disclosures\Disclosure;
 use App\Product;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -107,15 +108,13 @@ class TestController extends BaseController
     public function getFrameTable()
     {
         return view('pages/frameTable', [
-            'searchResults' => complete_data_report::all()
+            'searchResults' => Disclosure::all()
         ]);
     }
 
     public function getEmbeddedFrameTable()
     {
-        return view('pages/embeddedFrameTable', [
-            'searchResults' => complete_data_report::all()
-        ]);
+        return view('pages/embeddedFrameTable');
     }
 
 
