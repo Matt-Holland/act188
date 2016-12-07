@@ -8,6 +8,7 @@
         var $table = $('#searchTable');
         $table.DataTable({
             lengthChange: false,
+            searching: false,
             language: {
                 searchPlaceholder: 'Search...',
                 search: ''
@@ -54,7 +55,7 @@
                 <tr>
                     <td> {{ $searchResult['manufacturer'] }}</td>
                     <td> {{ $searchResult['brand'] }}</td>
-                    <td> {{ $searchResult['model'] }}</td>
+                    <td> <a href="/disclosures/{{ $searchResult['id'] }}">{{ $searchResult['model'] }}</a></td>
                     <td> {{ $searchResult['chemical_name'] }}</td>
                 </tr>
             @endforeach

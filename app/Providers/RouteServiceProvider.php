@@ -52,10 +52,11 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes(Router $router)
     {
+        call_user_func(require __DIR__ . '/../Http/Routes/disclosures.php', $router);
         $router->group([
             'namespace' => $this->namespace, 'middleware' => 'web',
         ], function ($router) {
-            require app_path('Http/routes.php');
+            require __DIR__ . '/../Http/Routes/routes.php';
         });
     }
 }
