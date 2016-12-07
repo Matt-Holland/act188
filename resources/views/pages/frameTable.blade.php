@@ -43,17 +43,19 @@
 <table id="searchTable" class="display" cellspacing="0" width="100%">
         <thead style="background: #FFF">
             <tr>
+                <th>Manufacturer</th>
+                <th>Brand</th>
+                <th>Model</th>
                 <th>Chemical</th>
-                <th>Function</th>
-                <th>Component</th>
             </tr>
         </thead>
         <tbody>
             @foreach($searchResults as $searchResult)
                 <tr>
-                    <td> {{ $searchResult->ChemicalName }}</td>
-                    <td>{{ $searchResult->ChemicalFunction }}</td>
-                    <td>{{ $searchResult->Component }} </td>
+                    <td> {{ $searchResult['manufacturer'] }}</td>
+                    <td> {{ $searchResult['brand'] }}</td>
+                    <td> {{ $searchResult['model'] }}</td>
+                    <td> {{ $searchResult['chemical_name'] }}</td>
                 </tr>
             @endforeach
         </tbody>

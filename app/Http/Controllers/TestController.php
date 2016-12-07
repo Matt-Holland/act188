@@ -107,8 +107,9 @@ class TestController extends BaseController
 
     public function getFrameTable()
     {
+        $disclosures = Disclosure::all()->forPage(1, 50);
         return view('pages/frameTable', [
-            'searchResults' => Disclosure::all()
+            'searchResults' => $disclosures->toArray()
         ]);
     }
 
