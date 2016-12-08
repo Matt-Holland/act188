@@ -41,6 +41,9 @@
     }
 </style>
 
+<form action="">
+    <input type="text" name="query" value="{{ $query }}" />
+</form>
 <table id="searchTable" class="display" cellspacing="0" width="100%">
         <thead style="background: #FFF">
             <tr>

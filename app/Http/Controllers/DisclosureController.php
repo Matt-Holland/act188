@@ -19,7 +19,8 @@ class DisclosureController extends BaseController
             ->forPage($request->input('page'), $request->input('perPage'));
 
         return view('pages/frameTable', [
-            'searchResults' => $disclosures->toArray()
+            'searchResults' => $disclosures->toArray(),
+            'query' => $query
         ]);
     }
 
