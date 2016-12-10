@@ -15,6 +15,7 @@ class DisclosureController extends BaseController
             ->where('model', 'LIKE', "%$query%")
             ->orWhere('brand', 'LIKE', "%$query%")
             ->orWhere('manufacturer', 'LIKE', "%$query%")
+            ->orWhere('chemical_name', 'LIKE', "%$query%")
             ->get()
             ->forPage($request->input('page'), $request->input('perPage'));
 

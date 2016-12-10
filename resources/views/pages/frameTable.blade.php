@@ -8,6 +8,7 @@
 
 <form action="">
     <input type="text" id="search" name="query" value="{{ $query }}" placeholder="Search..." />
+    <input type="submit" value="Search" />
 </form>
 <table id="searchTable" class="display" cellspacing="0" width="100%">
         <thead style="background: #FFF">
