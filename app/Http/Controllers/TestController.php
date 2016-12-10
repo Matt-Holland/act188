@@ -46,7 +46,6 @@ class TestController extends BaseController
 
     }
 
-
     public function doSearch(Request $request)
     {
         // $searchResults = DB::table('complete_data_reports')->where('ChemicalName', '120-47-8 Ethyl paraben')->value('DisclosureID');
@@ -69,7 +68,6 @@ class TestController extends BaseController
         //$searchResults = (object) ['DisclosureID' => '1234'];
         return view('pages/searchtest', array('searchResults' => $searchResults));
     }
-
 
     public function showSearch(Request $request)
     {   // this is to create the dropdown menus
@@ -101,23 +99,10 @@ class TestController extends BaseController
          */
 
         return view('pages/searchTable', array('searchResults' => $searchResults));
-
-
-    }
-
-    public function getFrameTable()
-    {
-        $disclosures = Disclosure::all()->forPage(1, 50);
-        return view('pages/frameTable', [
-            'searchResults' => $disclosures->toArray()
-        ]);
     }
 
     public function getEmbeddedFrameTable()
     {
         return view('pages/embeddedFrameTable');
     }
-
-
-
 }

@@ -3,46 +3,11 @@
 <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/1.4.5/jquery.floatThead.min.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        var $table = $('#searchTable');
-        $table.DataTable({
-            lengthChange: false,
-            searching: false,
-            language: {
-                searchPlaceholder: 'Search...',
-                search: ''
-            }
-        });
-        $table.floatThead();
-    });
-</script>
-
-<style type="text/css">
-    #searchTable_filter {
-        float: none !important;
-        text-align: left;
-        font-weight: bold;
-        text-align: center;
-    }
-    #searchTable_filter input {
-        padding: 5px;
-        outline: none;
-        border: 2px solid #999999;
-        border-radius: 5px;
-        background-color: #FBFBFB;
-        font-family: Cambria, Cochin, Georgia, serif;
-        font-size: 16px;
-        width: 50%;
-    }
-    #searchTable_filter input:focus {
-        background-color: #FFFFFF;
-        border-color: #333333;
-    }
-</style>
+<script src="/js/data-tables.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/data-tables.css">
 
 <form action="">
-    <input type="text" name="query" value="{{ $query }}" />
+    <input type="text" id="search" name="query" value="{{ $query }}" placeholder="Search..." />
 </form>
 <table id="searchTable" class="display" cellspacing="0" width="100%">
         <thead style="background: #FFF">
