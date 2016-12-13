@@ -4,13 +4,6 @@ namespace App\Products;
 
 use Illuminate\Database\Eloquent\Model;
 
-/**
- *
- * @property string manufacturer
- * @property string brand
- * @property string model
- * @property string chemical_name
- */
 class Product extends Model
 {
     protected $table = 'products';
