@@ -16,7 +16,6 @@
                 <th>Manufacturer</th>
                 <th>Brand</th>
                 <th>Model</th>
-                <th>Chemical</th>
             </tr>
         </thead>
         <tbody>

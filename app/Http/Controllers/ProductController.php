@@ -14,7 +14,8 @@ class ProductController extends BaseController
     {
         $search = $request->input('query');
         $products = Product::query()
-            ->where('model', 'LIKE', "%$search%")
+            ->where('gtin', 'LIKE', "%$search%")
+            ->orWhere('model', 'LIKE', "%$search%")
             ->orWhere('brand', 'LIKE', "%$search%")
             ->orWhere('manufacturer', 'LIKE', "%$search%")
             ->orWhereHas('disclosures', function (Builder $query) use ($search) {
