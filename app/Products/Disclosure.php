@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Disclosures;
+namespace App\Products;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,4 +14,9 @@ use Illuminate\Database\Eloquent\Model;
 class Disclosure extends Model
 {
     protected $table = 'disclosures';
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }
