@@ -14,9 +14,4 @@ use Illuminate\Database\Eloquent\Model;
 class Disclosure extends Model
 {
     protected $table = 'disclosures';
-
-    public function product()
-    {
-        return $this->belongsTo(Product::class);
-    }
 }
