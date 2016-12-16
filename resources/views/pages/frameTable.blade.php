@@ -16,7 +16,6 @@
                 <th>Manufacturer</th>
                 <th>Brand</th>
                 <th>Model</th>
-                <th>Chemical</th>
             </tr>
         </thead>
         <tbody>
@@ -24,8 +23,7 @@
                 <tr>
                     <td> {{ $searchResult['manufacturer'] }}</td>
                     <td> {{ $searchResult['brand'] }}</td>
-                    <td> <a href="/disclosures/{{ $searchResult['id'] }}">{{ $searchResult['model'] }}</a></td>
-                    <td> {{ $searchResult['chemical_name'] }}</td>
+                    <td> <a href="/products/{{ $searchResult['id'] }}">{{ $searchResult['model'] }}</a></td>
                 </tr>
             @endforeach
         </tbody>
