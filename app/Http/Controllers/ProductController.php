@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Products\Disclosure;
 use App\Products\Product;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Routing\Controller as BaseController;
