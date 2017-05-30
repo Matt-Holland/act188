@@ -160,7 +160,6 @@ return [
         /*
          * Added manually by Matt H. (does this need quotes around it?)
          */
-        //'Collective\Html\HtmlServiceProvider',
         Collective\Html\HtmlServiceProvider::class,
 
     ],

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\complete_data_report;
 use App\Disclosures\Disclosure;
 use App\Product;
+use App\import;
+use App\importtest;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -66,7 +68,7 @@ class TestController extends BaseController
         //echo $found->DisclosureID;
         //$object = (object) ['property' => 'Here we go'];
         //$searchResults = (object) ['DisclosureID' => '1234'];
-        return view('pages/searchtest', array('searchResults' => $searchResults));
+        return view('pages/searchTable', array('searchResults' => $searchResults));
     }
 
     public function showSearch(Request $request)
@@ -79,7 +81,8 @@ class TestController extends BaseController
             ->get();
 
 
-        return view('pages/showsearch', array('searchResults' => $searchResults));
+       // return view('pages/showsearch', array('searchResults' => $searchResults));
+        return view('pages/searchTable', array('searchResults' => $searchResults));
     }
 
     public function searchTable()
@@ -100,6 +103,54 @@ class TestController extends BaseController
 
         return view('pages/searchTable', array('searchResults' => $searchResults));
     }
+
+
+    public function searchImportTable(Request $request)
+    {
+
+        if ($request->input('ManufacturerName')) {
+            $searchvar = $request->input('ManufacturerName');
+            $colname = 'ManufacturerName';
+            $wildcardSearchVar = "%{$searchvar}%";
+            $searchResults = import::where($colname,"LIKE",$wildcardSearchVar)
+                ->paginate(25);
+        } elseif ($request->input('ChemicalName')) {
+            $searchvar = $request->input('ChemicalName');
+            $colname = 'ChemicalName';
+            $wildcardSearchVar = "%{$searchvar}%";
+            $searchResults = import::where($colname,"LIKE",$wildcardSearchVar)
+                ->paginate(25);
+        } elseif ($request->input('BrandName')) {
+            $searchvar = $request->input('BrandName');
+            $colname = 'BrandName';
+            $wildcardSearchVar = "%{$searchvar}%";
+            $searchResults = import::where($colname,"LIKE",$wildcardSearchVar)
+                ->paginate(25);
+        } elseif ($request->input('ProductModel')) {
+            $searchvar = $request->input('ProductModel');
+            $colname = 'ProductModel';
+            $wildcardSearchVar = "%{$searchvar}%";
+            $searchResults = import::where($colname,"LIKE",$wildcardSearchVar)
+                ->paginate(25);
+        } else {
+            $colname = null;
+            $searchvar = null;
+            $searchResults = import::paginate(25);
+        }
+
+
+        return view('pages/searchImportTable', array(
+            'searchResults' => $searchResults,
+            'colname' => $colname,
+            'searchvar'=> $searchvar,
+            'ManufacturerName' => $request->input('ManufacturerName'),
+            'ChemicalName' => $request->input('ChemicalName'),
+            'BrandName' => $request->input('BrandName'),
+            'ProductModel' => $request->input('ProductModel')
+        ));
+    }
+
+
 
     public function getEmbeddedFrameTable()
     {

@@ -30,4 +30,7 @@ Route::get('showSearch', 'TestController@showSearch');
 
 Route::get('searchtable', 'TestController@searchTable');
 
+Route::get('searchimporttable', 'TestController@searchImportTable');
+Route::post('searchimporttable', 'TestController@searchImportTable');
+
 Route::get('frametable-embedded', 'TestController@getEmbeddedFrameTable');
